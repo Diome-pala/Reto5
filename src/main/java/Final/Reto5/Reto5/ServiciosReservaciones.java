@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import paquete_Reto5.ContadorClientes;
 import paquete_Reto5.StatusReservas;
 
-
 /**
  *
  * @author Familia Palacio
@@ -20,16 +19,36 @@ import paquete_Reto5.StatusReservas;
 public class ServiciosReservaciones {
 
     @Autowired
+    /**
+     * se crean los servicios metodo crud
+     *
+     * @author Diomedes palacio
+     */
     private RepositorioReservaciones metodosCrud;
 
+    /**
+     * Se hace el llamado a toda la base metodo crud
+     *
+     * @author Diomedes palacio
+     */
     public List<Reservaciones> getAll() {
         return metodosCrud.getAll();
     }
 
+    /**
+     * Se muestran las reservaciones
+     *
+     * @author Diomedes palacio
+     */
     public Optional<Reservaciones> getReservation(int reservationId) {
         return metodosCrud.getReservation(reservationId);
     }
 
+    /**
+     * Se guardan las reservaciones
+     *
+     * @author Diomedes palacio
+     */
     public Reservaciones save(Reservaciones reservation) {
         if (reservation.getIdReservation() == null) {
             return metodosCrud.save(reservation);
@@ -43,6 +62,11 @@ public class ServiciosReservaciones {
         }
     }
 
+    /**
+     * Se actualizan las reservaciones
+     *
+     * @author Diomedes palacio
+     */
     public Reservaciones update(Reservaciones reservation) {
         if (reservation.getIdReservation() != null) {
             Optional<Reservaciones> e = metodosCrud.getReservation(reservation.getIdReservation());
@@ -67,6 +91,11 @@ public class ServiciosReservaciones {
         }
     }
 
+    /**
+     * Se elimina un areservacion
+     *
+     * @author Diomedes palacio
+     */
     public boolean deleteReservation(int reservationId) {
         Boolean aBoolean = getReservation(reservationId).map(reservation -> {
             metodosCrud.delete(reservation);
@@ -75,12 +104,22 @@ public class ServiciosReservaciones {
         return aBoolean;
     }
 
+    /**
+     * Se llaman los reportes
+     *
+     * @author Diomedes palacio
+     */
     public StatusReservas getReporteStatusReservaciones() {
         List<Reservaciones> completed = metodosCrud.ReservacionStatus("completed");
         List<Reservaciones> cancelled = metodosCrud.ReservacionStatus("cancelled");
         return new StatusReservas(completed.size(), cancelled.size());
     }
 
+    /**
+     * Se genera el reporte de tiempo
+     *
+     * @author Diomedes palacio
+     */
     public List<Reservaciones> getReporteTiempoReservaciones(String datoA, String datoB) {
         SimpleDateFormat parser = new SimpleDateFormat("yyy-MM-dd");
         Date datoUno = new Date();
@@ -99,6 +138,11 @@ public class ServiciosReservaciones {
         }
     }
 
+    /**
+     * Se genera el conteo de clientes
+     *
+     * @author Diomedes palacio
+     */
     public List<ContadorClientes> servicioTopCLientes() {
         return metodosCrud.getTopClientes();
     }

@@ -1,0 +1,219 @@
+/*-------------------Estilos base---------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+html {
+    font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+h1 {
+    text-align: left;
+}
+body {
+    background: rgb(64, 65, 66);
+}
+
+.img-menu {
+   width: 70px;
+   height: 70px;
+   padding: 10px;
+}
+
+.container {
+    width: 100%;
+    margin: auto;  
+}
+.container--flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 20px;
+}
+.column{
+    width: 100%;
+}
+
+.logo-menu{
+    padding-left: 8px;
+    text-decoration: none;
+    color: white;	
+}
+
+button {
+    background: #9f0000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 28px;
+}
+/*------------------ navegador ------------------*/
+
+header{
+	width: 100%;
+}
+
+.navegacion {
+    width: 5000px;
+    margin-top: 0px;
+    background: #24303c;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+}
+
+.navegacion ul{
+	list-style: none;
+}
+
+.menu > li{
+	position: relative;
+	display: inline-block;
+}
+
+.menu > li > a{
+	display: block;
+	padding: 15px 20px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.menu li a:hover{
+	color: #CE7D35;
+	transition: all .3s;
+}
+
+/* Submenu*/
+
+.submenu {
+    position: absolute;
+    background: #24303c;
+    width: 120%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+.submenu li a{
+	display: block;
+	padding: 15px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.menu li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
+}
+
+
+/*------------------Estilos Formulario--------------------------------*/
+
+.form-registro { 
+    width: 400px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+    box-shadow: 7px 13px 37px #000;
+}
+
+.form-registro h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.controles {
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+.form-registro p {
+    height: 40px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.form-registro a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.form-registro a:hover {
+    color: #ffffff;
+    text-decoration:underline;
+}
+
+.btnregistro {
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.btnactualizar {
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.btnmostrar {
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.muestra { 
+    width: 900px;
+    background: #12467a;
+    padding: 30px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+    box-shadow: 7px 13px 37px #000;
+}
+/************* TABLA JS ************/
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    letter-spacing: 1px;
+    padding: 15px;
+}
+
+tbody td {
+    text-align: center;
+}
